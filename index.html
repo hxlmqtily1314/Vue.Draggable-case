@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta charset="utf-8">
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+
+<style>
+body{
+	font-family:'微软雅黑'
+}
+[v-cloak]{
+	display:none;
+}
+#example{
+	width:1000px;
+	margin:0 auto;
+}
+.list-complete-item {
+  transition: all 1s;
+	height:50px;
+	line-height: 50px;
+	background: #000;
+	color:#fff;
+	text-align: center;
+	font-size:24px;
+	margin-top:10px;
+}
+.styleclass{
+	width:100px;
+	float:left;
+}
+.list-complete-enter, .list-complete-leave-active {
+  opacity: 0;
+  height: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  border: solid 0px;
+}
+.list-complete-sortable-chosen,.list-complete-sortable-ghost{
+ opacity: 0;
+  height: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  border: solid 0px;
+}
+.dargDiv{
+	cursor:move;
+	background:red;
+}
+.wrods{
+	margin-top:50px;
+}
+p{
+	line-height:24px;
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div id="example" v-cloak>
+	<draggable :list="list2" :move="getdata" @update="datadragEnd" :options="{animation: 300,handle:'.dargDiv'}">
+		<transition-group name="list-complete" >
+			<div v-for="element in list2" :key="element.it.name"  class="list-complete-item">
+				<div class="styleclass dargDiv">{{element.id}}</div>
+				<div class="styleclass">{{element.it.name}}</div>
+				
+			</div>
+		</transition-group>
+	</draggable>
+	<div class="wrods">
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+		<p class="test">下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容下面是具体的文章内容</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/require.js" data-main="js/vuedragMain"></script>
+</body>
+</html>
